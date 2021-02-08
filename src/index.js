@@ -4,9 +4,9 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 const app = (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <BrowserRouter basename={window.location.pathname || ''}>
+  <Route exact path="/" component={Index} />
+</BrowserRouter>
 );
 ReactDOM.render(app, document.getElementById("root"));
 serviceWorker.unregister();
